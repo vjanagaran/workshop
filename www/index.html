@@ -26,19 +26,96 @@
         <meta name="msapplication-tap-highlight" content="no" />
         <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-        <link rel="stylesheet" type="text/css" href="css/index.css" />
-        <title>Hello World</title>
+        <link rel="stylesheet" type="text/css" href="css/jquery.mobile.icons.min.css" />
+        <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
+        <link rel="stylesheet" type="text/css" href="css/periyava.min.css" />
+        <link rel="stylesheet" type="text/css" href="css/jquery.mobile.structure-1.4.5.min.css" />
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
+        <title>Workshop</title>
     </head>
     <body>
-        <div class="app">
-            <h1>PhoneGap</h1>
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
-            </div>
-        </div>
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
+        <div data-role="page" id="home" data-title="Home Header">
+            <div data-role="header" data-position="fixed">
+                <h1 class="ui-title" role="heading">慢病管家</h1>
+				<a data-rel="none" data-icon="bars" data-iconpos="notext" class="ui-btn-right" id="back">Save</a>
+            </div><!-- /header -->
+            <div role="main" class="ui-content">
+                <form id="home_search">
+                    <input type="search" name="search" id="home_search" placeholder="症状/食材/商品"/>
+                </form>
+                <div class="home_row1">
+                    <div class="cell1">量身定制</div>
+                    <div class="cell2">食材宜忌</div>
+                </div>
+                <div class="home_row2">
+                    <div class="cell3">
+                        <div class="cell3_1">咨询一对一</div>
+                        <div class="cell3_2">Shopping</div>
+                    </div>
+                    <div class="cell5"><a href="#page2">个人中心</a></div>
+                </div>
+            </div><!-- /content -->
+        </div> <!-- home -->
+
+        <div data-role="page" id="page2" data-title="Second">
+            <div data-role="header" data-position="fixed">
+				<a data-rel="back" data-icon="bars" data-iconpos="notext" id="back">Back</a>
+                <h1 class="ui-title" role="heading">慢病管家</h1>
+				<a data-rel="back" data-icon="check" data-iconpos="notext" id="back">Save</a>
+            </div><!-- /header -->
+            <div role="main" class="ui-content">
+			<div class="data_form">
+                <div class="ui-field-contain">
+                    <fieldset data-role="controlgroup" data-type="horizontal">
+                        <legend>性别</legend>
+                        <input name="radio-choice-h-1" id="radio-choice-h-1a" value="on" checked="checked" type="radio">
+                        <label for="radio-choice-h-1a">男</label>
+                        <input name="radio-choice-h-1" id="radio-choice-h-1b" value="off" type="radio">
+                        <label for="radio-choice-h-1b">女</label>
+                    </fieldset>
+                </div>
+                <div class="ui-field-contain">
+                    <label for="textinput-fc">年龄</label>
+                    <input name="textinput-fc" id="textinput-fc" placeholder="Height" value="58" type="text">
+                </div>
+                <div class="ui-field-contain">
+                    <label for="textinput-fc">体重</label>
+                    <input name="textinput-fc" id="textinput-fc" placeholder="Wieght" value="58Kg" type="text">
+                </div>
+                <div class="ui-field-contain">
+                    <label for="textinput-fc">病史</label>
+                    <input name="textinput-fc" id="textinput-fc" placeholder="some text" value="一年" type="text">
+                </div>
+                <fieldset class="form_select" data-role="controlgroup" data-type="horizontal">
+                    <legend>症状</legend>
+                    <label for="select-native-11">Select A</label>
+                    <select name="select-native-11" id="select-native-11">
+                        <option value="#">呼吸系统</option>
+                        <option value="#">消化系统</option>
+                        <option value="#">泌尿系统</option>
+                        <option value="#">泌尿系统</option>
+                        <option value="#">内分泌系统</option>
+                        <option value="#">代谢和营养</option>
+                        <option value="#">结蹄组织和风湿</option>
+                    </select>
+                    <label for="select-native-12">Select B</label>
+                    <select name="select-native-12" id="select-native-12">
+                        <option value="#">慢性淋巴瘤</option>
+                        <option value="#">慢性贫血</option>
+                        <option value="#">慢性淋巴细胞白血病</option>
+                    </select>
+                </fieldset>
+				</div>
+            </div><!-- /content -->
+        </div> <!-- home -->
+
+
+        <script type="text/javascript" charset="utf-8" src="js/libs/jquery-2.0.3.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/libs/jquery.mobile.router.min.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/libs/jquery.mobile-1.4.3.min.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/libs/jquery-dateFormat.min.js"></script>
+        <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/index.js"></script>
         <script type="text/javascript">
             app.initialize();
         </script>
